@@ -29,28 +29,39 @@ To use IBFT 2.0, edeXa requires an IBFT 2.0 genesis file. The genesis file defin
 
 !!! example "Example IBFT 2.0 genesis file"
 
-````
+````json
 ```json
-  {
-    "config": {
-      "chainId": 1981,
-      "berlinBlock": 0,
-      "ibft2": {
-        "blockperiodseconds": 2,
-        "epochlength": 30000,
-        "requesttimeoutseconds": 4,
-        "blockreward": "5000000000000000",
-        "miningbeneficiary": "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73"
-      }
-    },
-    "nonce": "0x0",
-    "timestamp": "0x58ee40ba",
-    "extraData": "0xf83ea00000000000000000000000000000000000000000000000000000000000000000d594c2ab482b506de561668e07f04547232a72897daf808400000000c0",
-    "gasLimit": "0x1fffffffffffff",
-    "difficulty": "0x1",
-    "mixHash": "0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365",
-    "alloc": {}
-  }
+{
+  "config": {
+    "chainId": 1995,
+    "homesteadBlock": 0,
+    "daoForkBlock": 0,
+    "eip150Block": 0,
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "constantinopleFixBlock": 0,
+    "ibft2": {
+      "blockperiodseconds": 2,
+      "epochlength": 30000,
+      "requesttimeoutseconds": 10
+    }
+  },
+  "nonce": "0x0",
+  "timestamp": "0x638453FD",
+  "gasLimit": "0xf7b760",
+  "difficulty": "0x1",
+  "mixHash": "0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365",
+  "coinbase": "0x0000000000000000000000000000000000000000",
+  "alloc": {
+    "0x42b8d75b02dF61Bb9c11159c4902d1Ea34BaDacd": {
+      "comment": "edeXa Treasury Account",
+      "balance": "10000000000000000000000000000"
+    }
+  },
+  "extraData": "0xf87ea00000000000000000000000000000000000000000000000000000000000000000f85494e18c106973a993421e9c274e74a4faa2546e3c659478c343badcb166036e7b0b87435c2ec2744c3bd09458ed66b8ddc1f248636fafdf9fa3b249dc09995994ad5df85aa8c0a6907991c642292a01cdbc1c5a30808400000000c0"
+}
 ```
 ````
 
@@ -457,7 +468,7 @@ To update an existing network with a new mining beneficiary:
          ```bash
          {
            "config": {
-             "chainId": 999,
+             "chainId": 1995,
              "berlinBlock": 0,
              "ibft2": {
                "blockperiodseconds": 1,
@@ -488,7 +499,7 @@ To update an existing network with a new mining beneficiary:
          ```bash
          {
            "config": {
-             "chainId": 999,
+             "chainId": 1995,
              "berlinBlock": 0,
              "ibft2": {
                "blockperiodseconds": 1,

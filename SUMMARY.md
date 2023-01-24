@@ -14,7 +14,7 @@
   * [Consensus protocols](how-to/configure/consensus-protocols/README.md)
     * [Configure IBFT 2.0 consensus](how-to/configure/consensus-protocols/configure-ibft-2.0-consensus.md)
     * [Add and remove validators without voting](how-to/configure/consensus-protocols/add-and-remove-validators-without-voting.md)
-  * [Configure free gas networks](how-to/configure/configure-free-gas-networks.md)
+  * [Setup minimum gas fee for your node](how-to/configure-edexa-node/setup-minimum-gas-fee-for-your-node.md)
   * [Configure bootnodes](how-to/configure/configure-bootnodes.md)
   * [Validators](how-to/configure/validators.md)
   * [TLS](how-to/configure/tls/README.md)
