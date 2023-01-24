@@ -2,12 +2,11 @@
 
 ## Fundamentals
 
-* [🛠 Getting started](README.md)
-  * [System requirements](fundamentals/getting-started/system-requirements.md)
-  * [Install edeXa](fundamentals/getting-started/install-edexa/README.md)
-    * [Run edeXa from a Docker image](fundamentals/getting-started/install-edexa/run-edexa-from-a-docker-image.md)
-    * [Install binary distribution](fundamentals/getting-started/install-edexa/install-binary-distribution.md)
-  * [Start edeXa](fundamentals/getting-started/start-edexa.md)
+* [System requirements](README.md)
+* [Install edeXa](fundamentals/install-edexa/README.md)
+  * [Run edeXa from a Docker image](fundamentals/install-edexa/run-edexa-from-a-docker-image.md)
+  * [Install binary distribution](fundamentals/install-edexa/install-binary-distribution.md)
+* [Start edeXa](fundamentals/start-edexa.md)
 
 ## How to
 
