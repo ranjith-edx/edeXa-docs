@@ -1,0 +1,2 @@
+# Configure edeXa Node
+
