@@ -73,6 +73,8 @@
   * [edeXa COMMAND LINE](how-to/reference/edexa-command-line/README.md)
     * [Private network subcommands](how-to/reference/edexa-command-line/private-network-subcommands.md)
     * [Private network command line options](how-to/reference/edexa-command-line/private-network-command-line-options.md)
+  * [edeXa API methods](how-to/reference/edexa-api-methods/README.md)
+    * [edeXa API objects](how-to/reference/edexa-api-methods/edexa-api-objects.md)
 
 ## Tutorial
 
