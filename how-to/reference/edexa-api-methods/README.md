@@ -1,25 +1,21 @@
 # edeXa API methods
 
-!!! attention
+You can use edeXa's Public JSON-RPC URL: [https://testnet.edexa.com/rpc](https://testnet.edexa.com/rpc)
 
 ```
-* This reference contains API methods that apply to both public and private networks.
+* This reference contains API methods that apply to edeXa network.
   For private-network-specific API methods, see the
   [private network API reference](../../../private-networks/reference/api/index.md).
-* All JSON-RPC HTTP examples use the default host and port endpoint `http://127.0.0.1:8545`. If
+* All JSON-RPC HTTP examples use the default host and port endpoint `https://testnet.edexa.com/rpc`. If
   using the [--rpc-http-host](../cli/options.md#rpc-http-host) or
   [--rpc-http-port](../cli/options.md#rpc-http-port) options, update the endpoint.
 * Most example requests are made against private networks.
   Depending on network configuration and activity, your example results might be different.
 ```
 
-\--8<-- "global/postman.md"
-
 ## `ADMIN` methods
 
 The `ADMIN` API methods provide administrative functionality to manage your node.
-
-!!! note
 
 ```
 The `ADMIN` API methods are not enabled by default for JSON-RPC. To enable the `ADMIN` API
@@ -30,8 +26,6 @@ methods, use the [`--rpc-http-api`](../cli/options.md#rpc-http-api) or
 ### `admin_addPeer`
 
 Adds a static node.
-
-!!! caution
 
 ```
 If connections are timing out, ensure the node ID in the
@@ -45,8 +39,6 @@ If connections are timing out, ensure the node ID in the
 #### Returns
 
 `result`: _boolean_ - `true` if peer added or `false` if peer already a static node
-
-!!! example
 
 ````
 === "curl HTTP request"
@@ -86,8 +78,6 @@ You can specify only one log level per RPC call.
 #### Returns
 
 `result`: _string_ - `Success` if the log level has changed, otherwise `error`
-
-!!! example
 
 ````
 The following example changes the debug level for specified classes to `DEBUG`.
@@ -143,15 +133,11 @@ The following example changes the debug level of all logs to `WARN`.
 
 Generates cached log bloom indexes for blocks. APIs such as [`eth_getLogs`](broken-reference) and [`eth_getFilterLogs`](broken-reference) use the cache for improved performance.
 
-!!! tip
-
 ```
 Manually executing `admin_generateLogBloomCache` is not required unless the
 [`--auto-log-bloom-caching-enabled`](../cli/options.md#auto-log-bloom-caching-enabled) command
 line option is set to false.
 ```
-
-!!! note
 
 ```
 Each index file contains 100000 blocks. The last fragment of blocks less than 100000 are not
@@ -172,8 +158,6 @@ indexed.
 * `currentBlock`: _string_ - most recent block added to the cache
 * `indexing`: _boolean_ - indicates if indexing is in progress
 * _boolean_ - indicates acceptance of the request from this call to generate the cache
-
-!!! example
 
 ````
 === "curl HTTP request"
@@ -224,8 +208,6 @@ You can skip a parameter by using an empty string, `""`. If you specify:
 
 `result`: _object_ - `Cache Removed` status or `error`.
 
-!!! example
-
 ````
 === "curl HTTP request"
 
@@ -263,8 +245,6 @@ Repairs cached logs by fixing all segments starting with the specified block num
 #### Returns
 
 `result`: _object_ - status of the repair request; `Started` or `Already running`
-
-!!! example
 
 ````
 === "curl HTTP request"
@@ -311,15 +291,11 @@ None
 * `ports`: _object_ - peer discovery and listening ports
 * `protocols`: _object_ - list of objects containing information for each Ethereum sub-protocol
 
-!!! note
-
 ```
 If the node is running locally, the host of the `enode` and `listenAddr` display as `[::]` in
 the result. When advertising externally, the external address displayed for the `enode` and
 `listenAddr` is defined by [`--nat-method`](../../how-to/connect/specify-nat.md).
 ```
-
-!!! example
 
 ````
 === "curl HTTP request"
@@ -398,8 +374,6 @@ None
 * `protocols`: _object_ - current state of peer including `difficulty` and `head` (`head` is the hash of the highest known block for the peer.)
 * `enode`: _string_ - enode URL of the remote node
 
-!!! example
-
 ````
 === "curl HTTP request"
 
@@ -462,8 +436,6 @@ Removes a static node.
 
 `result`: _boolean_ - `true` if peer removed or `false` if peer not a static node
 
-!!! example
-
 ````
 === "curl HTTP request"
 
@@ -492,8 +464,6 @@ Removes a static node.
 
 The `DEBUG` API methods allow you to inspect and debug the network. The `DEBUG` API is a more verbose alternative to the [`TRACE` API](broken-reference), and its main purpose is compatibility with tools such as [Remix](https://remix.ethereum.org/). Where these APIs overlap, we recommend using the [`TRACE` API](broken-reference) for production use over the `DEBUG` API. Specifically, we recommend `trace_block` over `debug_traceBlock`, and `trace_transaction` over `debug_traceTransaction`.
 
-!!! note
-
 ```
 The `DEBUG` API methods are not enabled by default for JSON-RPC. To enable the `DEBUG` API
 methods, use the [`--rpc-http-api`](../cli/options.md#rpc-http-api) or
@@ -518,8 +488,6 @@ Returns account information at the specified index of the specified block.
 * `nonce`: _quantity_ - number of transactions made by the account before this one
 * `balance`: _quantity_ - balance of the account in Wei
 * `codehash`: _data_ - code hash for the account
-
-!!! example
 
 ````
 This example uses an externally owned account address for the `address` parameter.
@@ -601,8 +569,6 @@ Returns the accounts for a specified block.
 * `addressMap`: _map_ of _strings_ to _strings_ - map of address hashes and account addresses
 * `nextKey`: _string_ - hash of the next address if any addresses remain in the state, otherwise zero
 
-!!! example
-
 ````
 === "curl HTTP request"
 
@@ -651,8 +617,6 @@ Sends a list of signed transactions. This is used to quickly load a network with
 * `index`: _string_ - index of the transaction in the request parameters array
 * `success`: _boolean_ - indicates whether or not the transaction has been added to the transaction pool
 * `errorMessage`: _string_ - (optional) error message
-
-!!! example
 
 ````
 === "curl HTTP"
@@ -708,8 +672,6 @@ None
 #### Returns
 
 `result`: _array_ of _objects_ - list of block objects
-
-!!! example
 
 ````
 === "curl HTTP"
